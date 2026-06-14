@@ -1,0 +1,27 @@
+NOTICE
+
+This repository contains a modified adaptation of the following work:
+
+  Original work : CL4R1T4S
+  Source file   : ANTHROPIC/CLAUDE-FABLE-5.md
+  Source URL    : https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md
+  Author        : elder-plinius (https://github.com/elder-plinius)
+  License       : GNU Affero General Public License v3.0 (AGPL-3.0)
+
+Modifications made on 2026-06-14:
+
+  File: SKILL.md
+  - Extracted behavioral operating patterns (operating loop, repository
+    behavior, research/factuality rules, tool-use policy, communication
+    style, formatting, safety handling) from the source document.
+  - Removed all product-specific content: model names, product strings,
+    release information, Anthropic-specific memory/storage APIs, and
+    platform-specific UI references.
+  - Removed identity-specific content: model persona, knowledge cutoff
+    dates, and internal reminder handling.
+  - Reorganized the remaining content into a portable, model-agnostic
+    skill format suitable for use with Claude Code, Codex, and similar
+    agents.
+
+This modified work is distributed under the same license as the original:
+GNU Affero General Public License v3.0. See LICENSE for the full text.
