@@ -1,27 +1,53 @@
 NOTICE
+======
 
-This repository contains a modified adaptation of the following work:
+This work is a modified derivative, distributed under the GNU Affero General
+Public License v3.0 (AGPL-3.0). See LICENSE for the full license text.
 
-  Original work : CL4R1T4S
-  Source file   : ANTHROPIC/CLAUDE-FABLE-5.md
-  Source URL    : https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md
-  Author        : elder-plinius (https://github.com/elder-plinius)
-  License       : GNU Affero General Public License v3.0 (AGPL-3.0)
+Original work
+-------------
+  Name        : CL4R1T4S
+  Source file : ANTHROPIC/CLAUDE-FABLE-5.md
+  Source URL  : https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md
+  Author      : elder-plinius (https://github.com/elder-plinius)
+  License     : GNU Affero General Public License v3.0 (AGPL-3.0)
 
-Modifications made on 2026-06-14:
+Derivative work
+---------------
+  Based on    : CL4R1T4S by elder-plinius
+  Modified by : EraWeb3Systems
+  License     : GNU Affero General Public License v3.0 (AGPL-3.0)
+  Date        : 2026-06-14
 
-  File: SKILL.md
-  - Extracted behavioral operating patterns (operating loop, repository
-    behavior, research/factuality rules, tool-use policy, communication
-    style, formatting, safety handling) from the source document.
-  - Removed all product-specific content: model names, product strings,
-    release information, Anthropic-specific memory/storage APIs, and
-    platform-specific UI references.
-  - Removed identity-specific content: model persona, knowledge cutoff
-    dates, and internal reminder handling.
-  - Reorganized the remaining content into a portable, model-agnostic
-    skill format suitable for use with Claude Code, Codex, and similar
-    agents.
+Nature of modification
+----------------------
+This is NOT a verbatim copy or redistribution of the source document. The
+source is a vendor- and model-specific system prompt. This derivative extracts
+only the portable operational structure from it and re-designs that structure
+into a vendor-neutral agent operating skill (SKILL.md). Model identity, vendor
+internals, environment-specific paths, and any unsafe or policy-bypassing
+content were deliberately not carried over.
 
-This modified work is distributed under the same license as the original:
-GNU Affero General Public License v3.0. See LICENSE for the full text.
+Elements extracted and redesigned from the source
+--------------------------------------------------
+  - tool discipline (minimal, grounded tool use; no fabricated tool output)
+  - file-first behavior (read real files before acting on them)
+  - artifact handling (create real files, predictable paths, verify before sharing)
+  - verification and reporting (state what was changed, verified, and not verified)
+  - source-grounded operation (prefer primary sources; keep attributions)
+  - anti-hallucination rules (no invented files, results, line numbers, or citations)
+
+Elements deliberately excluded from this derivative
+---------------------------------------------------
+  - model identity (model names, persona, self-identification)
+  - vendor-specific internals (hidden tools, private APIs, internal reminders)
+  - UI-specific behavior (rendering assumptions tied to a particular interface)
+  - unsafe or policy-bypass behavior (anything weakening guardrails)
+  - outdated platform claims (release info, product details, knowledge-cutoff dates)
+  - personality imitation (tone/voice impersonation of a specific model)
+
+Compliance note for redistributors
+-----------------------------------
+If you modify and redistribute this work, AGPL-3.0 requires you to keep it under
+AGPL v3, include the LICENSE file, and record your changes and their dates in
+this NOTICE (or an equivalent prominent notice).
