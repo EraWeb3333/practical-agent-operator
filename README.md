@@ -14,9 +14,12 @@
 
 - リポジトリを触る前に読むファイルの順番（README → LICENSE → NOTICE → AGENTS/CLAUDE/CONTRIBUTING → manifest → lockfile → CI → tests → src → git status）
 - 依頼を 8 つの作業モードに分類し、各モードで「最初に確認すること / やること / やらないこと / 報告に含めること」を固定
-- 9 段階の検証ラダー（static → syntax → type → unit → integration → build → lint → smoke → manual）と「実行した／していない／理由」の明示
-- 固定の最終報告フォーマット（Changed Files / What Changed / Verification / Risks / Next Action）
-- 反ハルシネーション規則（読んでいないファイル・実行していないテスト・存在未確認のパスを口にしない）
+- 9 段階の検証ラダー（static → syntax → type → unit → integration → build → lint → smoke → manual）
+- **検証主張の証跡バインド**（Verification Evidence Rules）：done には実行コマンド／レビュー対象などの証跡を必須化し、未実行は "Verification not run." と明記。未実行のテスト/ビルド/lint 成功の主張を禁止
+- **2段階の報告フォーマット**（Full：非自明タスク／Compact：軽微タスク）。様式を埋めるための検証捏造を禁止
+- **専門スキル優先の退避節**（Skill Precedence and Fallback Role）：本スキルは基盤規律層であり、専門スキルがある場合はそちらを優先
+- **並列作業・worktree 競合対策**（Parallel Work and Worktree Safety）
+- 反ハルシネーション規則 + Red Flags（合理化の自己検知表）
 - 防御限定のセキュリティレビュー手順と発見報告フォーマット
 
 ## 元 CL4R1T4S との差分
@@ -84,6 +87,19 @@ reporting format, and anti-hallucination rules.
 - ベンダー内部プロンプトの模倣・再現
 - 未検証情報を事実として断定する用途
 - 依頼範囲を超えた大規模改変や無断のリファクタ
+
+## 改訂メモ
+
+本スキルは A/B ベンチマーク（スキル有無の比較）の結果を反映して改訂しています。
+
+- **2026-06-14 初版** — CL4R1T4S からの抽出・再設計。
+- **2026-06-14 ベンチ反映改訂** — ベンチで「固定の検証欄を埋める圧力が、弱モデルに未実行検証の捏造（例: 未実行なのに『全166テストPASS』）を誘発する」逆効果（指標 M4 検証/誠実の低下）を検出。これを受けて以下を追加・変更:
+  - `Verification Evidence Rules` を追加（検証主張の証跡バインド／未実行の成功主張禁止／"Verification not run." の明示／過去文脈のテスト数の再利用禁止）
+  - 報告フォーマットを Full / Compact の2段階化（小タスクの様式圧を低減）
+  - `Skill Precedence and Fallback Role` を追加（専門スキル優先）
+  - `Parallel Work and Worktree Safety` を追加（並列 subagent / worktree 競合対策）
+  - Red Flags 表に検証捏造防止の行を追加
+  - 静的／手動レビューを検証証跡として扱うことを明確化（コマンド未実行＝完全未検証ではない）
 
 ## ライセンス注意
 
