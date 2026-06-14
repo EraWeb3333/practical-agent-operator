@@ -83,3 +83,8 @@ Follow its operating loop, repository behavior, factuality rules, and safety bou
 このリポジトリは [AGPL-3.0](LICENSE) でライセンスされています。
 
 対象ソース (`elder-plinius/CL4R1T4S`) も AGPL-3.0 でライセンスされています。このリポジトリは対象ソースをそのまま転載するのではなく、行動パターンをスキルとして再構成したものです。
+
+This project is based on CL4R1T4S by elder-plinius.
+Modified by EraWeb3Systems on 2026-06-14.
+This modified version is distributed under the GNU Affero General Public License v3.
+
